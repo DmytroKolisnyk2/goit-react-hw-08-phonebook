@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+
+.headline {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 26px;
+  color: $blue;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.header {
+  max-width: 840px;
+  padding: 10px 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 10px;
+  flex-wrap: wrap;
+}
+
+.list__link {
+  text-decoration: none;
+  font-size: 18px;
+  color: $black;
+  font-weight: 500;
+  transition: $animation;
+  border-bottom: 2px solid transparent;
+  border-radius: 2px;
+  padding-top: 2px;
+  &--active {
+    color: $blue;
+    border-bottom: 2px solid $blue;
+  }
+}
+
+.header__menu {
+  max-width: 300px;
+  width: fit-content;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 57px;
+  & li {
+    margin: 0 16px 0 0;
+  }
+}
+.UseMenu__btn {
+  @extend %btn;
+  padding: 6px 8px;
+}
+.UserMenu__text {
+  font-weight: 500;
+  font-size: 19px;
+  margin-right: 12px;
+}

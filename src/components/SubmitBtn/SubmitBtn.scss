@@ -1,0 +1,9 @@
+@import "styles/variables.scss";
+.form__submit {
+  display: block;
+  margin: 25px auto 0;
+  @extend %btn;
+  @media screen and (max-width: 768px) {
+    margin: 25px 0 0;
+  }
+}

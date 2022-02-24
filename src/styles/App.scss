@@ -29,13 +29,10 @@ body {
   width: 100%;
   display: flex;
   // flex-wrap: wrap;
-  max-height: 100vh;
+  max-height: calc(100vh - 100px);
   flex-direction: column;
 }
-.headline {
-  text-transform: uppercase;
-  color: $blue;
-}
+
 .error {
   color: $error;
   text-align: center;
@@ -46,7 +43,6 @@ body {
   justify-content: space-between;
   align-items: center;
   height: fit-content;
-  margin-top: 28px;
   & h2 {
     margin: 0;
   }
@@ -64,4 +60,7 @@ body {
       color: $error;
     }
   }
+}
+h2{
+  margin-top: 0;
 }

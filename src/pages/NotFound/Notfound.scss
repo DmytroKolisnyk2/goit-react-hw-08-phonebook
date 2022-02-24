@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.not-found {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.not-found__headline {
+  font-size: 30px;
+  & span {
+    color: $blue;
+    font-size: 44px;
+    margin-right: 8px;
+  }
+}

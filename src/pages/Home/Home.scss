@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+.home {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.home__link {
+  @extend %btn;
+  text-decoration: none;
+  font-size: 24px;
+  width: 120px;
+}
+.home__link-wrapper {
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto 0;
+}
+.home__headline{
+  font-size: 30px;
+  color: $blue;
+}
