@@ -9,6 +9,9 @@
     display: none;
   }
 }
+.headline-wrapper{
+  text-decoration: none;
+}
 .header {
   max-width: 840px;
   padding: 10px 20px 15px;
@@ -35,14 +38,15 @@
 }
 
 .header__menu {
-  max-width: 300px;
+  // max-width: 300px;
+  flex-wrap: nowrap;
   width: fit-content;
+  display: flex;
 }
 .menu__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -59,4 +63,10 @@
   font-weight: 500;
   font-size: 19px;
   margin-right: 12px;
+}
+.UserMenu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 14px;
 }

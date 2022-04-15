@@ -4,9 +4,11 @@ import { getContact, addContact, deleteContact } from "./items-operations";
 
 export const items = createReducer([], {
   [addContact.fulfilled]: (state, { payload }) => [payload, ...state],
-  [deleteContact.fulfilled]: (state, { payload }) => [
+  [deleteContact.fulfilled]: (state, { payload }) => {
+    console.log(payload)
+    return [
     ...state.filter((element) => element.id !== payload),
-  ],
+  ]},
   [getContact.fulfilled]: (_, { payload }) => payload,
 });
 

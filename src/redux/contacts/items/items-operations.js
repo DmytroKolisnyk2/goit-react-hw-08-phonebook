@@ -4,7 +4,7 @@ import { info } from "@pnotify/core";
 import "@pnotify/core/dist/PNotify.css";
 import "@pnotify/core/dist/BrightTheme.css";
 
-axios.defaults.baseURL = "https://61fb905c87801d0017a2c5b6.mockapi.io";
+axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
 export const getContact = createAsyncThunk("contacts/getContact", (_, { rejectWithValue }) =>
   axios
@@ -25,12 +25,14 @@ export const addContact = createAsyncThunk("contacts/addContact", (data, { rejec
 
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
-  (id, { rejectWithValue }) =>
-    axios
+  (id, { rejectWithValue }) => {
+    console.log(id)
+    return axios
       .delete(`/contacts/${id}`)
-      .then(({ data }) => {
+      .then(() => {
         info({ text: `Contact successfully deleted`, delay: 700 });
-        return data.id;
+        return id;
       })
       .catch(({ message }) => rejectWithValue(message))
+  }
 );

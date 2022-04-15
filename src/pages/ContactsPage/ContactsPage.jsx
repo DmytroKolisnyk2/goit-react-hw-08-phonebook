@@ -5,11 +5,12 @@ import ContactList from "../../components/ContactList/ContactList";
 import Filter from "../../components/Filter/Filter";
 import Message from "../../components/Message/Message";
 import ContactsCounter from "../../components/ContactsCounter/ContactsCounter";
+import Loader from "../../components/Loader/Loader";
 
 import { connect } from "react-redux";
-import { getContactsLength } from "../../redux/contacts/contacts-selectors";
+import { getContactsLength, getError, getLoading } from "../../redux/contacts/contacts-selectors";
 
-const ContactsPage = ({ contactsLength }) => {
+const ContactsPage = ({ contactsLength, loading, error }) => {
   return (
     <section className="phonebook__wrapper">
       <div className="form-wrapper">
@@ -26,12 +27,16 @@ const ContactsPage = ({ contactsLength }) => {
 
         <ContactList />
       </div>
+      {loading && <Loader />}
+      {error && <h2 className="error">{error}</h2>}
     </section>
   );
 };
 
 const mapStateToProps = (state) => ({
   contactsLength: getContactsLength(state),
+  loading: getLoading(state),
+  error: getError(state),
 });
 
 export default connect(mapStateToProps, null)(ContactsPage);

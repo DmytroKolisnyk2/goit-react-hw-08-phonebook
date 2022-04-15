@@ -18,18 +18,30 @@ export default function Input({
   return (
     <label className="filter__title" htmlFor={inputId}>
       <h3 className="phonebook__headline">{headline}</h3>
-      <input
-        value={value}
-        onChange={onChange}
-        className="form__input"
-        type={inputType}
-        name={inputName}
-        id={inputId}
-        title={inputTitle}
-        required={required}
-        pattern={inputPattern}
-        autoComplete="off"
-      />
+      {inputPattern ? (
+        <input
+          value={value}
+          onChange={onChange}
+          className="form__input"
+          type={inputType}
+          name={inputName}
+          id={inputId}
+          required={required}
+          pattern={inputPattern}
+          autoComplete="off"
+        />
+      ) : (
+        <input
+          value={value}
+          onChange={onChange}
+          className="form__input"
+          type={inputType}
+          name={inputName}
+          id={inputId}
+          required={required}
+          autoComplete="off"
+        />
+      )}
     </label>
   );
 }
